@@ -1,38 +1,85 @@
-let ventas = parseInt(prompt("Ingrese el monto total de ventas"));
-let cvu = parseInt(prompt("Ingrese el costo unitario del producto"));
-let q = parseInt(prompt("Ingrese el volumen de ventas"));
-let cf = parseInt(prompt("Ingrese el monto total de costos fijos"));
 
-//Podria ser una funcion de calculo
-let p = ventas/q
-let cm = p-cvu
-let PE = cf /cm
+function informacionActual(){
+    let montoVentasac = parseInt(prompt("Ingrese el monto total de ventas realizadas en pesos"));
+    let costoVariableUnitac = parseInt(prompt("Ingrese el costo unitario gastado del producto en pesos"));
+    let canTidadvenac = parseInt(prompt("Ingrese las unidades vendidas realizadas"));
+    let costoFijoac = parseInt(prompt("Ingrese el monto total de costos fijos en pesos gastado"))}
+
+function informacionBP(){
+    let montoVentasbp = parseInt(prompt("Ingrese el monto total de ventas presupuestada en pesos"));
+    let costoVariableUnitbp = parseInt(prompt("Ingrese el costo unitario presupuestado del producto en pesos"));
+    let canTidadvebp = parseInt(prompt("Ingrese las unidades vendidas presupuestadas"));
+    let costoFijobp = parseInt(prompt("Ingrese el monto total de costos fijos en pesos presupuestado"))}
 
 
-//Condiciones
-//Aqui lo que trato de indicar es que si coloco una LETRA O algo que no sea un numero que lo invalide a seguir
-if (isNaN(ventas & cf & cvu & q)){
-    alert ("No corresponde a un formato valido");
-} else {
-    console.log ("El punto de equilibrio es:" +" "+ PE)
+function calculoActual(){
+    let precioVentaac = montoVentasac/costoVariableUnitac;
+    let contribMarginalac = precioVentaac-costoVariableUnitac;
+    let puntoEquilibrioac = costoFijoac /contribMarginalac
+}
+
+function calculoBp(){
+    let precioVentabp = montoVentasbp/costoVariableUnitbp;
+    let contribMarginalbp = precioVentabp-costoVariableUnitbp;
+    let puntoEquilibriobp = costoFijobp /contribMarginalbp
 }
 
 
+informacionActual()
+informacionBP()
+calculoActual()
+calculoBp()
 
-if (cm<=0) {
-    let cb = prompt("¿Se encuentra en proceso de estructuracion?"   );
-    if (cb=="si"){
+
+if (contribMarginalac<=0) {
+    let breakCost = prompt("¿Se encuentra en proceso de estructuracion?"   );
+    if (breakCost=="si"){
         alert ("analizar estructura fijas de costos")
     }
     else{
         alert ("NO CUBRIMOS LOS COSTOS VARIABLES CON LA ESTRUCTURA ACTUAL")    }
 
 } else{
-    console.log("La contribucion marginal es:" + " "+ cm)
+    console.log("La contribucion marginal es:" + " "+ contribMarginalac)
+
+}
+
+if (contribMarginalbp<=0) {
+    let breakCost = prompt("¿Se encuentra en proceso de estructuracion?"   );
+    if (breakCost=="si"){
+        alert ("analizar estructura fijas de costos")
+    }
+    else{
+        alert ("NO CUBRIMOS LOS COSTOS VARIABLES CON LA ESTRUCTURA ACTUAL")    }
+
+} else{
+    console.log("La contribucion marginal es:" + " "+ contribMarginalbp)
+
 }
 
 
 
+//Retomar cuando no corresponda a un numero 
 
+if(isNaN(informacionActual)){
+    alert ("no corrresponde a un caracter valido");
+    return 
+} else{
+    console.log("La contribucion marginal es:" + " "+ contribMarginalac)
+}
+
+
+if(isNaN(informacionBP)){
+    alert ("no corrresponde a un caracter valido");
+    return 
+} else{
+    console.log("La contribucion marginal es:" + " "+ contribMarginalbp)
+}
+
+
+
+//Objetos
+
+const GranEstructura
 
 
